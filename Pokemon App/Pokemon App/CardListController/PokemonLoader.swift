@@ -18,9 +18,10 @@ class PokemonLoader {
         let url = URL(string: "https://api.pokemontcg.io/v2/cards?pageSize=10")!
         URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
             guard let self = self else { return }
+            guard let data = data else { return }
             DispatchQueue.main.async {
                 do {
-                    let pokemoncards = try self.transformJsonDataToCardList(with:data!)
+                    let pokemoncards = try self.transformJsonDataToCardList(with:data)
                     completion (.Success(pokemoncards))
                 } catch let error {
                     let errorMessage = error.localizedDescription

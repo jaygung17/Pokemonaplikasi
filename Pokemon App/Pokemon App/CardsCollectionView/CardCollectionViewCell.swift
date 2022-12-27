@@ -25,10 +25,12 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     
     func downloadPokemonCardImage(for url: URL) {
+        pokemonCardImageView.isShimmering = true
         downloadTask = URLSession.shared.dataTask(with: url) { data, response, error in
             if let image = UIImage (data: data!) {
                 DispatchQueue.main.sync {
                     self.pokemonCardImageView.image = image
+                    self.pokemonCardImageView.isShimmering = false
                 }
             } else {
                 print("Something went wrong.")

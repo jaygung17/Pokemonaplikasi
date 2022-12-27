@@ -20,12 +20,16 @@ class CardListViewController: UIViewController, UICollectionViewDelegate, UIColl
             self.categorytypeCollectionView.reloadData()
         }
     }
-
+    var categoryTypes : [String] = []
+    var selectedType : String = " "
     
     var loader = PokemonLoader()
     @IBOutlet var pokemonSearchBar: UISearchBar!
     @IBOutlet weak var cardListCollectionView: UICollectionView!
+   
     @IBOutlet weak var categorytypeCollectionView: CategoryTypeCollectionView!
+    
+    
     
     @IBOutlet weak var errorMessageLabel: UILabel!
     
@@ -63,15 +67,28 @@ class CardListViewController: UIViewController, UICollectionViewDelegate, UIColl
         refreshControl.endRefreshing()
     }
 //MARK: CollectionView for Card List
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listCard.count
+        if collectionView == self.cardListCollectionView {
+            return listCard.count
+        }
+        return categoryTypes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "XibPokemonCard", for: indexPath) as! CardCollectionViewCell
-        let cards = listCard[indexPath.row]
-        cell.downloadPokemonCardImage(for: URL(string: "\(cards.imageURL)")!)
-        return cell
+        if collectionView == self.cardListCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "XibPokemonCard", for: indexPath) as! CardCollectionViewCell
+            let cards = listCard[indexPath.row]
+            cell.downloadPokemonCardImage(for: URL(string: "\(cards.imageURL)")!)
+            return cell
+        } else  {
+            let category = categoryTypes[indexPath.row]
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryTypeCollectionViewCell", for:indexPath) as! CategoryTypeCollectionViewCell
+                    print(category)
+                    cell.settingTypeButton(text: category, selected: category == selectedType)
+                    return cell
+        }
+        
     }
     
     
@@ -118,11 +135,12 @@ extension CardListViewController {
     }
     //setUpPokemonTypeCollectionView
     func setUpPokemonTypeCollectionView() {
-        categorytypeCollectionView.delegate = self
-        categorytypeCollectionView.dataSource = self
+        
+        self.categorytypeCollectionView.delegate = self
+        self.categorytypeCollectionView.dataSource = self
         //Register XIB dengan CategoryTypeCollectionViewCell dan identifier XibPokemonType
         self.categorytypeCollectionView.register(UINib(nibName: "CategoryTypeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "XibPokemonType")
-        categorytypeCollectionView.refreshControl = refreshControl
+        self.categorytypeCollectionView.refreshControl = refreshControl
     }
     //MARK: CategoryOfPokemonType
     private func loadPokemonType() {
@@ -131,7 +149,10 @@ extension CardListViewController {
         loader.getPokemonTypeData { result in
             switch result {
             case .success(let CategoryTypeResult):
-                self.successLoadCategories(with: CategoryTypeResult)
+                self.categoryTypes = CategoryTypeResult
+                DispatchQueue.main.async {
+                    self.categorytypeCollectionView.reloadData()
+                }
             case .failure(let err):
                 self.failedToLoad(with: err.localizedDescription)
             }
@@ -156,5 +177,8 @@ extension CardListViewController {
         self.errorMessageLabel.isHidden = false
         self.pokemonCardReloadButton.isHidden = false
     }
+    
+
 }
+
 

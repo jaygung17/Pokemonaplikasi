@@ -11,38 +11,53 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="XibPokemonType" id="gTV-IL-0wX" customClass="CategoryTypeCollectionViewCell" customModule="Pokemon_App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
+                <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qhy-8X-XhW">
-                        <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhy-8X-XhW">
+                        <rect key="frame" x="0.0" y="0.0" width="87" height="35"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYK-pO-gMO">
-                                <rect key="frame" x="23" y="5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYK-pO-gMO">
+                                <rect key="frame" x="10" y="5.0000000000000018" width="67" height="25.666666666666671"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
+                            <constraint firstItem="lYK-pO-gMO" firstAttribute="top" secondItem="Qhy-8X-XhW" secondAttribute="top" constant="5" id="NlS-f0-jCp"/>
                             <constraint firstItem="lYK-pO-gMO" firstAttribute="centerX" secondItem="Qhy-8X-XhW" secondAttribute="centerX" id="T8z-Nh-SX1"/>
-                            <constraint firstItem="lYK-pO-gMO" firstAttribute="centerY" secondItem="Qhy-8X-XhW" secondAttribute="centerY" id="Wga-Au-dJX"/>
-                            <constraint firstAttribute="trailing" secondItem="lYK-pO-gMO" secondAttribute="trailing" constant="23" id="cbw-c5-QTG"/>
-                            <constraint firstItem="lYK-pO-gMO" firstAttribute="leading" secondItem="Qhy-8X-XhW" secondAttribute="leading" constant="23" id="ybv-sS-p9h"/>
+                            <constraint firstItem="lYK-pO-gMO" firstAttribute="leading" secondItem="Qhy-8X-XhW" secondAttribute="leading" constant="10" id="a2y-FR-zdp"/>
+                            <constraint firstItem="lYK-pO-gMO" firstAttribute="leading" secondItem="Qhy-8X-XhW" secondAttribute="leading" constant="10" id="dgd-G7-LJu"/>
+                            <constraint firstAttribute="bottom" secondItem="lYK-pO-gMO" secondAttribute="bottom" constant="4.3300000000000001" id="jpL-kB-itz"/>
+                            <constraint firstAttribute="trailing" secondItem="lYK-pO-gMO" secondAttribute="trailing" constant="10" id="peJ-4e-Qle"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Qhy-8X-XhW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GsI-PX-E5K"/>
+                <constraint firstAttribute="trailing" secondItem="Qhy-8X-XhW" secondAttribute="trailing" id="RNR-C2-t3W"/>
+                <constraint firstAttribute="bottom" secondItem="Qhy-8X-XhW" secondAttribute="bottom" id="SoK-4S-xvq"/>
+                <constraint firstAttribute="trailing" secondItem="Qhy-8X-XhW" secondAttribute="trailing" id="ZMz-jo-hE8"/>
+                <constraint firstItem="Qhy-8X-XhW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fKg-kY-rgj"/>
+                <constraint firstItem="Qhy-8X-XhW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="i6D-YW-HmC"/>
+                <constraint firstAttribute="bottom" secondItem="Qhy-8X-XhW" secondAttribute="bottom" id="juk-CE-z6D"/>
+                <constraint firstItem="Qhy-8X-XhW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tnj-kx-qOf"/>
+            </constraints>
             <connections>
                 <outlet property="pokemonTypeBackgroundView" destination="Qhy-8X-XhW" id="R21-Dd-f10"/>
                 <outlet property="typeLabel" destination="lYK-pO-gMO" id="9au-1t-sI3"/>
             </connections>
-            <point key="canvasLocation" x="19.847328244274809" y="20.422535211267608"/>
+            <point key="canvasLocation" x="19.083969465648853" y="20.422535211267608"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,11 +39,11 @@
         <scene sceneID="DDd-hC-VCD">
             <objects>
                 <viewController id="JS8-xY-Twe" customClass="CardListViewController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="L9K-9D-Krg">
+                    <view key="view" contentMode="scaleToFill" id="L9K-9D-Krg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hfb-Kp-l78">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hfb-Kp-l78">
                                 <rect key="frame" x="53" y="301" width="240" height="510"/>
                                 <color key="backgroundColor" name="SecondaryColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="11" minimumInteritemSpacing="40" sectionInsetReference="layoutMargins" id="6P4-dp-dkF">
@@ -71,60 +70,60 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aFb-O7-EXc" customClass="CategoryTypeCollectionView" customModule="Pokemon_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="110" width="393" height="83"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="g8t-jh-DH7"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TXu-Oa-AfD">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="j0y-eI-fGl">
-                                        <rect key="frame" x="0.0" y="-22.666666666666668" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AQH-Qs-6aD">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7c7-D5-rZf">
-                                <rect key="frame" x="53" y="577" width="250" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7c7-D5-rZf">
+                                <rect key="frame" x="100" y="577" width="193" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Reload"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFA-Im-GVm">
+                                <rect key="frame" x="0.0" y="143" width="393" height="30"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aGr-UC-e5o" customClass="CategoryTypeCollectionView" customModule="Pokemon_App" customModuleProvider="target">
+                                        <rect key="frame" x="-15" y="0.0" width="408" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1hO-rj-W9M">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AGx-ZG-R0h">
+                                                <rect key="frame" x="0.0" y="-15" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rJW-wI-b9T">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KjD-Zk-AkW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uIU-CM-IYK"/>
                         <color key="backgroundColor" name="SecondaryColor"/>
                         <constraints>
-                            <constraint firstItem="aFb-O7-EXc" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="8qw-Y0-37X"/>
-                            <constraint firstItem="aFb-O7-EXc" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="Efq-O3-t7V"/>
+                            <constraint firstItem="rFA-Im-GVm" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="7Ya-yc-ttT"/>
+                            <constraint firstItem="rFA-Im-GVm" firstAttribute="top" secondItem="uIU-CM-IYK" secondAttribute="top" constant="40" id="7w2-mD-Nhl"/>
+                            <constraint firstItem="7c7-D5-rZf" firstAttribute="centerX" secondItem="L9K-9D-Krg" secondAttribute="centerX" id="ELA-jF-Xkv"/>
                             <constraint firstItem="hfb-Kp-l78" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="NWt-5j-sH8"/>
-                            <constraint firstItem="aFb-O7-EXc" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" id="Swf-ua-i2v"/>
-                            <constraint firstItem="uIU-CM-IYK" firstAttribute="bottom" secondItem="aFb-O7-EXc" secondAttribute="bottom" constant="700" id="TeM-om-E7o"/>
                             <constraint firstItem="uIU-CM-IYK" firstAttribute="trailing" secondItem="7c7-D5-rZf" secondAttribute="trailing" constant="100" id="Wvj-4r-a4h"/>
-                            <constraint firstAttribute="trailing" secondItem="aFb-O7-EXc" secondAttribute="trailing" id="YXN-VM-zgV"/>
-                            <constraint firstItem="aFb-O7-EXc" firstAttribute="top" secondItem="L9K-9D-Krg" secondAttribute="top" constant="110" id="Yz9-Dh-Q4C"/>
                             <constraint firstItem="hfb-Kp-l78" firstAttribute="bottom" secondItem="uIU-CM-IYK" secondAttribute="bottom" id="bLe-sE-M8J"/>
                             <constraint firstItem="7c7-D5-rZf" firstAttribute="leading" secondItem="uIU-CM-IYK" secondAttribute="leading" constant="100" id="bMR-xj-7YS"/>
+                            <constraint firstItem="uIU-CM-IYK" firstAttribute="bottom" secondItem="7c7-D5-rZf" secondAttribute="bottom" constant="157" id="bU7-sL-hhg"/>
                             <constraint firstItem="hfb-Kp-l78" firstAttribute="trailing" secondItem="uIU-CM-IYK" secondAttribute="trailing" id="hML-Lz-R5C"/>
-                            <constraint firstItem="hfb-Kp-l78" firstAttribute="top" secondItem="aFb-O7-EXc" secondAttribute="bottom" constant="10" id="me9-yh-Gts"/>
-                            <constraint firstAttribute="trailing" secondItem="aFb-O7-EXc" secondAttribute="trailing" id="q2H-gu-I8w"/>
+                            <constraint firstItem="rFA-Im-GVm" firstAttribute="trailing" secondItem="uIU-CM-IYK" secondAttribute="trailing" id="ho5-5b-weO"/>
                             <constraint firstItem="hfb-Kp-l78" firstAttribute="top" secondItem="uIU-CM-IYK" secondAttribute="top" constant="100" id="qzu-YZ-p8J"/>
-                            <constraint firstItem="uIU-CM-IYK" firstAttribute="trailing" secondItem="aFb-O7-EXc" secondAttribute="trailing" id="wkB-VE-thF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7j5-sp-2Tn"/>
                     <connections>
                         <outlet property="cardListCollectionView" destination="hfb-Kp-l78" id="TBY-j5-MVd"/>
-                        <outlet property="categoryTypeCollectionView" destination="aFb-O7-EXc" id="qpv-nd-MYw"/>
-                        <outlet property="categorytypeCollectionView" destination="aFb-O7-EXc" id="KqF-QY-pPM"/>
+                        <outlet property="categorytypeCollectionView" destination="aGr-UC-e5o" id="bb9-hh-vaf"/>
                         <outlet property="errorMessageLabel" destination="Xsz-Ii-jEd" id="wYW-Zo-oac"/>
                         <outlet property="pokemonCardReloadButton" destination="7c7-D5-rZf" id="LXX-FN-oMB"/>
                         <outlet property="pokemonSearchBar" destination="4TX-Sh-mQW" id="8lQ-D9-837"/>
@@ -212,8 +211,5 @@
         <namedColor name="SecondaryColor">
             <color red="0.22400000691413879" green="0.24300000071525574" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
